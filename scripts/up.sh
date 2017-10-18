@@ -12,4 +12,4 @@ docker-compose up --remove-orphans -d
 sleep $SLEEP
 
 # check that all containers are healthy
-docker-compose ps -q | xargs docker inspect -f '{{ .Name }} {{ .State.Status }} {{with .State.Health}}{{ .Status }}{{end}}' | grep -E " running$| running healthy$"
+docker-compose ps -q | xargs docker inspect -f '{{ .Name }} {{ .State.Status }}{{with .State.Health}} {{ .Status }}{{end}}' | grep -E " running$| running healthy$"
