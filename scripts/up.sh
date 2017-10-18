@@ -3,6 +3,7 @@
 set -o errexit
 set -o pipefail
 set -o nounset
+set -o xtrace
 
 docker-compose pull
 docker-compose build --force-rm --pull
